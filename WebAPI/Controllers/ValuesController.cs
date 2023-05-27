@@ -15,10 +15,10 @@ namespace WebAPI.Controllers
             _meterService = meterService;
         }
 
-        [HttpGet("deneme")]
-        public IActionResult  Get()
+        [HttpGet("getMeterById")]
+        public IActionResult getMeterById(Guid id)
         {
-            return Ok(_meterService.GetAll());
+            return Ok(_meterService.GetById(id));
         }
     }
 }

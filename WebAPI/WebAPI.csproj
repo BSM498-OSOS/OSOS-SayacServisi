@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\OSOS-OkumaServisi\Core\Core.csproj" />
     <ProjectReference Include="..\Business\Business.csproj" />
   </ItemGroup>
 

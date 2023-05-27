@@ -12,7 +12,7 @@ namespace Business.Abstract
         bool Add(Meter meter);
         bool Delete(Meter meter);
         bool Update(Meter meter);
-        Meter GetById(string meterId);
+        Meter GetById(Guid meterId);
         List<Meter> GetAll();
     }
 }

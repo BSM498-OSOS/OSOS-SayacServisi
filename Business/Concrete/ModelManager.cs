@@ -35,7 +35,7 @@ namespace Business.Concrete
             return _modelDal.GetAll();
         }
 
-        public Model GetById(string modelId)
+        public Model GetById(Guid modelId)
         {
             return _modelDal.Get(m=>m.Id == modelId);
         }

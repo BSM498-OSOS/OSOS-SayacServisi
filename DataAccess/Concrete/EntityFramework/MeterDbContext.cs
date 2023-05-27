@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class MeterContext: DbContext
+    public class MeterDbContext: DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseNpgsql("Host=");
+            => optionsBuilder.UseNpgsql("Host=localhost;Database=Bitirme;UserId=postgres;Password=Mert.123");
 
         public DbSet<Meter> Meters { get; set; }
         public DbSet<Model> Models { get; set; }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<ReadingTime> Readings { get; set; }
         
     }
 }

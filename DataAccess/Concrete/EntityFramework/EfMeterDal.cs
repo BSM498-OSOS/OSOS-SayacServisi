@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfMeterDal : EfEntityRepositoryBase<Meter, MeterContext>, IMeterDal
+    public class EfMeterDal : EfEntityRepositoryBase<Meter, MeterDbContext>, IMeterDal
     {
 
     }

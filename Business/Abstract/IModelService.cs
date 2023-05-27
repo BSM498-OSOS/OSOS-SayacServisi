@@ -12,7 +12,7 @@ namespace Business.Abstract
         bool Add(Model model);
         bool Delete(Model model);
         bool Update(Model model);
-        Model GetById(string modelId);
+        Model GetById(Guid modelId);
         List<Model> GetAll();
     }
 }

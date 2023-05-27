@@ -35,7 +35,7 @@ namespace Business.Concrete
             return _meterDal.GetAll();
         }
 
-        public Meter GetById(string meterId)
+        public Meter GetById(Guid meterId)
         {
             return _meterDal.Get(m => m.Id == meterId);
         }

@@ -12,7 +12,7 @@ namespace Business.Abstract
         bool Add(Brand brand);
         bool Delete(Brand brand);
         bool Update(Brand brand);
-        Brand GetById(string brandId);
+        Brand GetById(Guid brandId);
         List<Brand> GetAll();
     }
 }
