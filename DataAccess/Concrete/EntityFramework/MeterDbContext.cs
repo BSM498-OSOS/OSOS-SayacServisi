@@ -16,7 +16,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Meter> Meters { get; set; }
         public DbSet<Model> Models { get; set; }
         public DbSet<Brand> Brands { get; set; }
-        public DbSet<ReadingTime> Readings { get; set; }
+        public DbSet<ReadingTime> ReadingTimes { get; set; }
         
     }
 }

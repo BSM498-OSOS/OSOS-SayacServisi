@@ -9,7 +9,7 @@ namespace Entities.Concrete
 {
     public class Meter : IEntity
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
         public Guid ModelId { get;  set; }
         public Guid ReadingTimeId { get; set; }
 

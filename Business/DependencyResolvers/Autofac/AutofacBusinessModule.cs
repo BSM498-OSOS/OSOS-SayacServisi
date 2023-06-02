@@ -27,6 +27,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ModelManager>().As<IModelService>().SingleInstance();
             builder.RegisterType<EfModelDal>().As<IModelDal>().SingleInstance();
 
+            builder.RegisterType<ReadingTimeManager>().As<IReadingTimeService>().SingleInstance();
+            builder.RegisterType<EfReadingTimeDal>().As<IReadingTimeDal>().SingleInstance();
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
                 .EnableInterfaceInterceptors(new ProxyGenerationOptions()

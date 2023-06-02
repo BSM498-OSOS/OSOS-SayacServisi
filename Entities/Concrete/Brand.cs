@@ -9,7 +9,7 @@ namespace Entities.Concrete
 {
     public class Brand : IEntity
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get;  set; }
         public String Name { get; set; }
     }
 }

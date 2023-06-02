@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace Business.Abstract
 {
     public interface IModelService
     {
-        bool Add(Model model);
-        bool Delete(Model model);
-        bool Update(Model model);
-        Model GetById(Guid modelId);
-        List<Model> GetAll();
+        IResult Add(Model model); 
+        IResult Delete(Model model); 
+        IResult Update(Model model); 
+        IDataResult<Model> GetById(Guid modelId); 
+        IDataResult<List<Model>> GetAll();
     }
 }

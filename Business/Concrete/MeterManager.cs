@@ -1,6 +1,8 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Concrete.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,32 +20,55 @@ namespace Business.Concrete
             _meterDal = meterDal;
         }
 
-        public bool Add(Meter meter)
+        public IResult Add(Meter meter)
         {
             _meterDal.Add(meter);
-            return true;
+            return new SuccessResult();
         }
 
-        public bool Delete(Meter meter)
+        public IResult Delete(Meter meter)
         {
             _meterDal.Delete(meter);
-            return true;
+            return new SuccessResult(); 
         }
 
-        public List<Meter> GetAll()
+        public IDataResult<List<Meter>> GetAll()
         {
-            return _meterDal.GetAll();
+            var result = _meterDal.GetAll();
+            if(result!=null)
+                return new SuccessDataResult<List<Meter>>(result);
+            return new ErrorDataResult<List<Meter>>();
         }
 
-        public Meter GetById(Guid meterId)
+        public IDataResult<List<MeterWithCompleteInfoDto>> GetAllWithCompleteInfo()
         {
-            return _meterDal.Get(m => m.Id == meterId);
+            var result = _meterDal.GetAllWithCompleteInfo();
+            if (result != null)
+                return new SuccessDataResult<List<MeterWithCompleteInfoDto>>(result);
+            return new ErrorDataResult<List<MeterWithCompleteInfoDto>>();
         }
 
-        public bool Update(Meter meter)
+        public IDataResult<Meter> GetById(Guid meterId)
+        {
+            var result=_meterDal.Get(m => m.Id == meterId);
+            if(result!=null)
+                return new SuccessDataResult<Meter>(result);
+            return new ErrorDataResult<Meter>();
+        }
+
+        public IDataResult<MeterWithCompleteInfoDto> GetWithCompleteInfoById(Guid meterId)
+        {
+            var result = _meterDal.GetAllWithCompleteInfoById(meterId);
+            if (result != null)
+                return new SuccessDataResult<MeterWithCompleteInfoDto>(result);
+            return new ErrorDataResult<MeterWithCompleteInfoDto>();
+        }
+
+        public IResult Update(Meter meter)
         {
             _meterDal.Update(meter);
-            return true;
+            return new SuccessResult();
         }
+
     }
 }

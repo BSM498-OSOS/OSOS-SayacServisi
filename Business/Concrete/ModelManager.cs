@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -18,32 +19,38 @@ namespace Business.Concrete
             _modelDal = modelDal;
         }
 
-        public bool Add(Model model)
+        public IResult Add(Model model)
         {
             _modelDal.Add(model);
-            return true;
+            return new SuccessResult();
         }
 
-        public bool Delete(Model model)
+        public IResult Delete(Model model)
         {
             _modelDal.Delete(model);
-            return true;
+            return new SuccessResult();
         }
 
-        public List<Model> GetAll()
+        public IDataResult<List<Model>> GetAll()
         {
-            return _modelDal.GetAll();
+            var result= _modelDal.GetAll();
+            if (result != null)
+                return new SuccessDataResult<List<Model>>(result);
+            return new ErrorDataResult<List<Model>>();
         }
 
-        public Model GetById(Guid modelId)
+        public IDataResult<Model> GetById(Guid modelId)
         {
-            return _modelDal.Get(m=>m.Id == modelId);
+            var result= _modelDal.Get(m=>m.Id == modelId);
+            if (result != null)
+                return new SuccessDataResult<Model>(result);
+            return new ErrorDataResult<Model>();
         }
 
-        public bool Update(Model model)
+        public IResult Update(Model model)
         {
             _modelDal.Update(model);
-            return true;
+            return new SuccessResult();
         }
     }
 }

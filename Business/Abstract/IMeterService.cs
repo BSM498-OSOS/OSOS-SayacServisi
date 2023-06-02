@@ -1,4 +1,6 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
+using Entities.Concrete.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +11,13 @@ namespace Business.Abstract
 {
     public interface IMeterService
     {
-        bool Add(Meter meter);
-        bool Delete(Meter meter);
-        bool Update(Meter meter);
-        Meter GetById(Guid meterId);
-        List<Meter> GetAll();
+        IResult Add(Meter meter);
+        IResult Delete(Meter meter);
+        IResult Update(Meter meter);
+        IDataResult<Meter> GetById(Guid meterId);
+        IDataResult<List<Meter>> GetAll();
+
+        IDataResult<MeterWithCompleteInfoDto> GetWithCompleteInfoById(Guid meterId);
+        IDataResult<List<MeterWithCompleteInfoDto>> GetAllWithCompleteInfo();
     }
 }
