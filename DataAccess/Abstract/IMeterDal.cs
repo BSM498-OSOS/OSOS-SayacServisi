@@ -14,5 +14,7 @@ namespace DataAccess.Abstract
         public List<MeterWithCompleteInfoDto> GetAllWithCompleteInfo();
 
         public MeterWithCompleteInfoDto GetAllWithCompleteInfoById(Guid id);
+
+        MeterWithCompleteInfoDto GetAllWithCompleteInfoBySerialNo(int serialNo);
     }
 }

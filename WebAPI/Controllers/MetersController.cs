@@ -25,6 +25,15 @@ namespace WebAPI.Controllers
             return BadRequest();
         }
 
+        [HttpGet("getMeterBySerialNo")]
+        public IActionResult getMeterBySerialNo(int serialNo)
+        {
+            var result = _meterService.GetBySerialNo(serialNo);
+            if (result.Success)
+                return Ok(result.Data);
+            return BadRequest();
+        }
+
         [HttpGet("getAllMeters")]
         public IActionResult getAllMeters()
         {
@@ -38,6 +47,15 @@ namespace WebAPI.Controllers
         public IActionResult getMeterWithCompleteInfoById(Guid id)
         {
             var result = _meterService.GetWithCompleteInfoById(id);
+            if (result.Success)
+                return Ok(result.Data);
+            return BadRequest();
+        }
+
+        [HttpGet("getMeterWithCompleteInfoBySerialNo")]
+        public IActionResult getMeterWithCompleteInfoBySerialNo(int serialNo)
+        {
+            var result = _meterService.GetWithCompleteInfoBySerialNo(serialNo);
             if (result.Success)
                 return Ok(result.Data);
             return BadRequest();

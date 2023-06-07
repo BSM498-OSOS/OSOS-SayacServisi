@@ -15,9 +15,11 @@ namespace Business.Abstract
         IResult Delete(Meter meter);
         IResult Update(Meter meter);
         IDataResult<Meter> GetById(Guid meterId);
+        IDataResult<Meter> GetBySerialNo(int serialNo);
         IDataResult<List<Meter>> GetAll();
 
         IDataResult<MeterWithCompleteInfoDto> GetWithCompleteInfoById(Guid meterId);
+        IDataResult<MeterWithCompleteInfoDto> GetWithCompleteInfoBySerialNo(int serialNo);
         IDataResult<List<MeterWithCompleteInfoDto>> GetAllWithCompleteInfo();
     }
 }

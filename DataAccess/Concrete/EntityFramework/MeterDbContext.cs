@@ -11,7 +11,7 @@ namespace DataAccess.Concrete.EntityFramework
     public class MeterDbContext: DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseNpgsql("Host=localhost;Database=Bitirme;UserId=postgres;Password=Mert.123");
+            => optionsBuilder.UseNpgsql("Host=host.docker.internal;Database=Bitirme;UserId=postgres;Password=Mert.123");
 
         public DbSet<Meter> Meters { get; set; }
         public DbSet<Model> Models { get; set; }

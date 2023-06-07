@@ -56,9 +56,25 @@ namespace Business.Concrete
             return new ErrorDataResult<Meter>();
         }
 
+        public IDataResult<Meter> GetBySerialNo(int serialNo)
+        {
+            var result = _meterDal.Get(m => m.SerialNo == serialNo);
+            if (result != null)
+                return new SuccessDataResult<Meter>(result);
+            return new ErrorDataResult<Meter>();
+        }
+
         public IDataResult<MeterWithCompleteInfoDto> GetWithCompleteInfoById(Guid meterId)
         {
             var result = _meterDal.GetAllWithCompleteInfoById(meterId);
+            if (result != null)
+                return new SuccessDataResult<MeterWithCompleteInfoDto>(result);
+            return new ErrorDataResult<MeterWithCompleteInfoDto>();
+        }
+
+        public IDataResult<MeterWithCompleteInfoDto> GetWithCompleteInfoBySerialNo(int serialNo)
+        {
+            var result = _meterDal.GetAllWithCompleteInfoBySerialNo(serialNo);
             if (result != null)
                 return new SuccessDataResult<MeterWithCompleteInfoDto>(result);
             return new ErrorDataResult<MeterWithCompleteInfoDto>();

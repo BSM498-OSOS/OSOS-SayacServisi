@@ -6,15 +6,21 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{3E17D031-7D5C-47D4-8B95-74B301AC4EEC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{BC01EC94-A508-43FB-84DC-872FC348E5F1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{514C5D8C-1DC2-46E0-816F-8A88F3B1D665} = {514C5D8C-1DC2-46E0-816F-8A88F3B1D665}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{5175E167-93AF-4C1C-8690-AB4441EEF5C7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{514C5D8C-1DC2-46E0-816F-8A88F3B1D665} = {514C5D8C-1DC2-46E0-816F-8A88F3B1D665}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{F1B05B76-A8A1-4DBD-B6DF-68AF998B0DA3}"
 	ProjectSection(ProjectDependencies) = postProject
-		{E9E87AEA-AD74-495C-B4F4-F2153514FBCD} = {E9E87AEA-AD74-495C-B4F4-F2153514FBCD}
+		{514C5D8C-1DC2-46E0-816F-8A88F3B1D665} = {514C5D8C-1DC2-46E0-816F-8A88F3B1D665}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "..\OSOS-OkumaServisi\Core\Core.csproj", "{E9E87AEA-AD74-495C-B4F4-F2153514FBCD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{514C5D8C-1DC2-46E0-816F-8A88F3B1D665}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +44,10 @@ Global
 		{F1B05B76-A8A1-4DBD-B6DF-68AF998B0DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1B05B76-A8A1-4DBD-B6DF-68AF998B0DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1B05B76-A8A1-4DBD-B6DF-68AF998B0DA3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E9E87AEA-AD74-495C-B4F4-F2153514FBCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9E87AEA-AD74-495C-B4F4-F2153514FBCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9E87AEA-AD74-495C-B4F4-F2153514FBCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9E87AEA-AD74-495C-B4F4-F2153514FBCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{514C5D8C-1DC2-46E0-816F-8A88F3B1D665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{514C5D8C-1DC2-46E0-816F-8A88F3B1D665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{514C5D8C-1DC2-46E0-816F-8A88F3B1D665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{514C5D8C-1DC2-46E0-816F-8A88F3B1D665}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

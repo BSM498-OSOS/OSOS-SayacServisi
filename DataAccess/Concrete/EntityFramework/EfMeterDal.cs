@@ -64,5 +64,32 @@ namespace DataAccess.Concrete.EntityFramework
                 return result.FirstOrDefault();
             }
         }
+
+        public MeterWithCompleteInfoDto GetAllWithCompleteInfoBySerialNo(int serialNo)
+        {
+            using (var context = new MeterDbContext())
+            {
+                var result = from m in context.Meters
+                             join model in context.Models
+                                on m.ModelId equals model.Id
+                             join b in context.Brands
+                                on model.BrandId equals b.Id
+                             join r in context.ReadingTimes
+                                 on m.ReadingTimeId equals r.Id
+                             where m.SerialNo == serialNo
+                             select new MeterWithCompleteInfoDto
+                             {
+                                 Id = m.Id,
+                                 ModelId = m.ModelId,
+                                 ModelName = model.Name,
+                                 BrandId = model.BrandId,
+                                 BrandName = b.Name,
+                                 ReadingTimeId = m.ReadingTimeId,
+                                 ReadingTimeName = r.Name,
+                                 SerialNo = m.SerialNo
+                             };
+                return result.FirstOrDefault();
+            }
+        }
     }
 }
